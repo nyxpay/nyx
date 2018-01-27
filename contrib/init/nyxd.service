@@ -1,0 +1,22 @@
+[Unit]
+Description=Nyx's distributed currency daemon
+After=network.target
+
+[Service]
+User=nyx
+Group=nyx
+
+Type=forking
+PIDFile=/var/lib/nyxd/nyxd.pid
+ExecStart=/usr/bin/nyxd -daemon -pid=/var/lib/nyxd/nyxd.pid \
+-conf=/etc/nyx/nyx.conf -datadir=/var/lib/nyxd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

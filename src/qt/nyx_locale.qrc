@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/nyx_bg.qm</file>
+        <file alias="de">locale/nyx_de.qm</file>
+        <file alias="en">locale/nyx_en.qm</file>
+        <file alias="es">locale/nyx_es.qm</file>
+        <file alias="fi">locale/nyx_fi.qm</file>
+        <file alias="fr">locale/nyx_fr.qm</file>
+        <file alias="it">locale/nyx_it.qm</file>
+        <file alias="ja">locale/nyx_ja.qm</file>
+        <file alias="pl">locale/nyx_pl.qm</file>
+        <file alias="pt">locale/nyx_pt.qm</file>
+        <file alias="ru">locale/nyx_ru.qm</file>
+        <file alias="sk">locale/nyx_sk.qm</file>
+        <file alias="sv">locale/nyx_sv.qm</file>
+        <file alias="vi">locale/nyx_vi.qm</file>
+        <file alias="zh_CN">locale/nyx_zh_CN.qm</file>
+        <file alias="zh_TW">locale/nyx_zh_TW.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+usr/local/bin/nyx-qt usr/bin
+share/pixmaps/nyx32.xpm usr/share/pixmaps
+share/pixmaps/nyx16.xpm usr/share/pixmaps
+share/pixmaps/nyx128.png usr/share/pixmaps
+debian/nyx-qt.desktop usr/share/applications
+debian/nyx-qt.protocol usr/share/kde4/services/

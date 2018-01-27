@@ -1,0 +1,16 @@
+Building Nyx Core
+
+Use the autogen script to prepare the build environment.
+
+    ./autogen.sh
+    ./configure
+    make
+
+Precompiled binaries are available at github, see
+https://github.com/nyxpay/nyx-binaries
+
+Always verify the signatures and checksums.
+
+See doc/build-*.md for instructions on building nyxd,
+the intended-for-services, no-graphical-interface, reference
+implementation of Nyx.

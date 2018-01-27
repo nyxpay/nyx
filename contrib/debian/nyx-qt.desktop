@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Nyx
+Comment=Nyx P2P Cryptocurrency
+Comment[fr]=Nyx, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Nyx, eşten eşe kriptografik sanal para birimi
+Exec=nyx-qt %u
+Terminal=false
+Type=Application
+Icon=nyx128
+MimeType=x-scheme-handler/nyx;
+Categories=Office;Finance;
