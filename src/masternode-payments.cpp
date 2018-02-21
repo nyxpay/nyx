@@ -561,27 +561,30 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
     // if we don't have at least MNPAYMENTS_SIGNATURES_REQUIRED signatures on a payee, approve whichever is the longest chain
     if(nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED) return true;
-
-    BOOST_FOREACH(CMasternodePayee& payee, vecPayees) {
-        if (payee.GetVoteCount() >= MNPAYMENTS_SIGNATURES_REQUIRED) {
-            BOOST_FOREACH(CTxOut txout, txNew.vout) {
-                if (payee.GetPayee() == txout.scriptPubKey && nMasternodePayment == txout.nValue) {
-                    LogPrint("mnpayments", "CMasternodeBlockPayees::IsTransactionValid -- Found required payment\n");
-                    return true;
-                }
-            }
-
-            CTxDestination address1;
-            ExtractDestination(payee.GetPayee(), address1);
-            CBitcoinAddress address2(address1);
-
-            if(strPayeesPossible == "") {
-                strPayeesPossible = address2.ToString();
-            } else {
-                strPayeesPossible += "," + address2.ToString();
+	
+    BOOST_FOREACH (CMasternodePayee& payee, vecPayees) {
+        bool MasternodePaymentFound = false;
+        BOOST_FOREACH (CTxOut txout, txNew.vout) {
+            if (payee.GetPayee() == txout.scriptPubKey) {
+                if(txout.nValue >= nMasternodePayment)
+                    MasternodePaymentFound = true;
+                else
+                    LogPrintf("Masternode payment is out of range. Paid=%f Min=%f\n", (float)txout.nValue/COIN, (float)nMasternodePayment/COIN);
             }
         }
-    }
+		
+		if (MasternodePaymentFound) return true;
+		
+        CTxDestination address1;
+        ExtractDestination(payee.GetPayee(), address1);
+        CBitcoinAddress address2(address1);
+
+        if (strPayeesPossible == "") {
+               strPayeesPossible = address2.ToString();
+           } else {
+               strPayeesPossible += "," + address2.ToString();
+           }
+    }	
 
     LogPrintf("CMasternodeBlockPayees::IsTransactionValid -- ERROR: Missing required payment, possible payees: '%s', amount: %f NYX\n", strPayeesPossible, (float)nMasternodePayment/COIN);
     return false;
