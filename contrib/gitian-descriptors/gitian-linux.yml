@@ -1,5 +1,5 @@
 ---
-name: "nyx-linux-0.12"
+name: "nyx-linux-2.0.0"
 enable_cache: true
 suites:
 - "trusty"

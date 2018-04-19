@@ -1,5 +1,5 @@
 ---
-name: "nyx-raspberry-0.12"
+name: "nyx-raspberry-2.0.0"
 enable_cache: true
 suites:
 - "trusty"

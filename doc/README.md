@@ -11,8 +11,8 @@ The following are some helpful notes on how to run Nyx on your native platform.
 
 Unpack the files into a directory and run:
 
-- `bin/bitcoin-qt` (GUI) or
-- `bin/bitcoind` (headless)
+- `bin/nyx-qt` (GUI) or
+- `bin/nyxd` (headless)
 
 ### Windows
 

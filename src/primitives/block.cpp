@@ -13,7 +13,6 @@
 
 uint256 CBlockHeader::GetHash() const
 {
-
       uint256 thash;
       unsigned int profile = 0x0;
       neoscrypt((unsigned char *) &nVersion, (unsigned char *) &thash, profile);

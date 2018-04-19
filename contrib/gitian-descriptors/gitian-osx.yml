@@ -1,5 +1,5 @@
 ---
-name: "nyx-osx-0.12"
+name: "nyx-osx-2.0.0"
 enable_cache: true
 suites:
 - "trusty"
